@@ -49,6 +49,12 @@ SQL Queries and Findings
 ### SQL Code Snippets
 
 Here are a few key SQL queries used to gain these insights:
-
+``` SQL
+-- Example: Total Revenue per Product
+SELECT
+Product,
+SUM(Quantity*UnitPrice)
+as TotalRevenue from [dbo].[LITACapstoneDataset]
+GROUP BY Product
 
 
