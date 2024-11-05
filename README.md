@@ -92,7 +92,7 @@ Pivot tables and sum formulas were used to summarize the values.
 
 #### SQL Queries
 
-  See the SQL files in the SQL Queries folder for each of the queries used in this project.
+  See the SQL files in Readme for each of the queries used in this project.
 
 #### Power BI Dashboard
 
