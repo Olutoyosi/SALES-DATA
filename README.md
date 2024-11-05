@@ -86,13 +86,17 @@ Based on the analysis, here are some data-driven recommendations:
 ####Excel Calculations
 
 Pivot tables and sum formulas were used to summarize the values.
+![VISUALS from Excel](https://github.com/user-attachments/assets/843c29cf-3735-4881-baa3-7e350bac013b)
+![SALES - PIVOT TABLES](https://github.com/user-attachments/assets/5903c27c-7e37-426b-870c-ace783e8b251)
+
+
 #### SQL Queries
 
   See the SQL files in the SQL Queries folder for each of the queries used in this project.
 
 #### Power BI Dashboard
 
-  Power BI File: The .pbix file is included in this repository for detailed visualizations. (Add instructions for navigating the dashboard here)
+![POWER BI DASHBOARD](https://github.com/user-attachments/assets/0ab7d735-26a9-4da0-bce3-b88d0e2f8e5b)
 
 
 ## Conclusion
