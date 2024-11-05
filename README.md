@@ -83,7 +83,7 @@ Based on the analysis, here are some data-driven recommendations:
   - Investigate Low-Sales Products: Products with low sales in the last quarter might need a review for discontinuation or price adjustments.
   - 
 ## Technical Documentation
-####Excel Calculations
+#### Excel Calculations
 
 Pivot tables and sum formulas were used to summarize the values.
 ![VISUALS from Excel](https://github.com/user-attachments/assets/843c29cf-3735-4881-baa3-7e350bac013b)
