@@ -56,5 +56,20 @@ Product,
 SUM(Quantity*UnitPrice)
 as TotalRevenue from [dbo].[LITACapstoneDataset]
 GROUP BY Product
+```
+## Building the Power BI Dashboard
+   ###Dashboard Overview
 
+The final step was to visualize our findings in Power BI to make the data easy to interpret. The dashboard provides an interactive view of the insights we uncovered, organized into the following sections:
+
+  Sales Overview: Displays total sales, Total sales by month, and revenue distribution by region.
+  Top-Performing Products: A view of the best-selling products and their contribution to revenue.
+  Regional Breakdown: A chart showing the percentage contribution of each region to total sales, helping identify regional strengths.
+
+### Key Visualizations
+
+  Monthly Sales Trends: A line chart showing sales totals by month, revealing seasonal patterns.
+  Top Products by Revenue: A bar chart for easy comparison of the top products.
+  Revenue by Region: A chart visualization to show regional performance across all areas.
+  Slicers: Added slicers for Product and Region to allow stakeholders to explore the data dynamically.
 
