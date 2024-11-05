@@ -25,11 +25,11 @@ Initial data exploration in Excel helped us understand the dataset’s structure
 
 - Total Sales by Product, Region, and Month: Using pivot tables, we summarized total sales across different dimensions to get an overview.
 - Average Sales per Product: Calculated the average sales per product to help identify consistently high- or low-performing products.
--  Total Revenue by Region: Summed revenue per region to see which areas contributed most to the bottom line.
+- Total Revenue by Region: Summed revenue per region to see which areas contributed most to the bottom line.
 
 Key Findings from Excel
 
-- The top-performing region contributed over 30% of total revenue.
+- The top-performing region contributed over 44% of total revenue.
 - A few products generated the majority of sales, showing clear product leaders.
 - Monthly sales trends revealed that sales peak during certain months, suggesting seasonality in customer purchasing behavior.
 
@@ -50,27 +50,49 @@ SQL Queries and Findings
 
 Here are a few key SQL queries used to gain these insights:
 ``` SQL
--- Example: Total Revenue per Product
+--  Total Revenue per Product--
 SELECT
 Product,
 SUM(Quantity*UnitPrice)
 as TotalRevenue from [dbo].[LITACapstoneDataset]
 GROUP BY Product
 ```
+Explanation: Here, unit_price * quantity calculates the total sales for each item, and summing that up for each product gives the total sales per product category.
+
+``` SQL
+----- find the number of sales transactions in each region.---
+select region,
+count(OrderID)as NumberofSalesTransaction
+from [dbo].[LITACapstoneDataset]
+group by Region
+order by 2 desc
+```
+Explanation: Counting order_ids per region provides the number of sales transactions for each region.
+
+``` SQL
+---find the highest-selling product by total sales value----
+
+SELECT TOP 1 Product, SUM(Quantity) AS TotalSalesValue
+FROM LITACapstoneDataset
+GROUP BY Product
+ORDER BY TotalSalesValue DESC;
+```
+Explanation: This query calculates TotalSales for each product by multiplying unit_price by quantity, and then orders by the highest total sales.
+
 ## Building the Power BI Dashboard
-   ###Dashboard Overview
+   ### Dashboard Overview
 
 The final step was to visualize our findings in Power BI to make the data easy to interpret. The dashboard provides an interactive view of the insights we uncovered, organized into the following sections:
 
-  Sales Overview: Displays total sales, Total sales by month, and revenue distribution by region.
-  Top-Performing Products: A view of the best-selling products and their contribution to revenue.
-  Regional Breakdown: A chart showing the percentage contribution of each region to total sales, helping identify regional strengths.
+  - Sales Overview: Displays total sales, Total sales by month, and revenue distribution by region.
+  - Top-Performing Products: A view of the best-selling products and their contribution to revenue.
+  - Regional Breakdown: A chart showing the percentage contribution of each region to total sales, helping identify regional strengths.
 
 ### Key Visualizations
 
   Monthly Sales Trends: A line chart showing sales totals by month, revealing seasonal patterns.
   Top Products by Revenue: A bar chart for easy comparison of the top products.
-  Revenue by Region: A chart visualization to show regional performance across all areas.
+  Revenue by Region: A pie chart visualization to show regional performance across all areas.
   Slicers: Added slicers for Product and Region to allow stakeholders to explore the data dynamically.
 
 ## Key Insights and Recommendations
@@ -81,14 +103,14 @@ Based on the analysis, here are some data-driven recommendations:
   - Boost Stock and Marketing of Top-Selling Products: Given that a small set of products drives the majority of revenue, ensuring their availability and visibility will likely    enhance overall sales.
   - Consider Seasonal Promotions: Monthly trends suggest peaks in specific months, indicating an opportunity to plan seasonal promotions to maximize sales during high-demand periods.
   - Investigate Low-Sales Products: Products with low sales in the last quarter might need a review for discontinuation or price adjustments.
-  - 
+    
 ## Technical Documentation
 #### Excel Calculations
 
 Pivot tables and sum formulas were used to summarize the values.
-![VISUALS from Excel](https://github.com/user-attachments/assets/843c29cf-3735-4881-baa3-7e350bac013b)
+![EXCEL-sales data](https://github.com/user-attachments/assets/b67c37aa-9fab-4afd-85ec-0e6a056141d2)
 ![SALES - PIVOT TABLES](https://github.com/user-attachments/assets/5903c27c-7e37-426b-870c-ace783e8b251)
-
+![VISUALS from Excel](https://github.com/user-attachments/assets/843c29cf-3735-4881-baa3-7e350bac013b)
 
 #### SQL Queries
 
